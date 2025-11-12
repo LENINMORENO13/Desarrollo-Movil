@@ -17,7 +17,7 @@ class SettingsPage extends StatelessWidget {
               child: Row(
                 children: [
                   BasicContainer('1', Icons.abc_outlined),
-                  const SizedBox(width: 12), // 12px de separación
+                  const SizedBox(width: 12),
                   BasicContainer('2', Icons.ac_unit_rounded),
                   const SizedBox(width: 12),
                   BasicContainer('3', Icons.access_alarms_outlined),
@@ -29,6 +29,12 @@ class SettingsPage extends StatelessWidget {
                   BasicContainer('6', Icons.phone),
                   const SizedBox(width: 12),
                   BasicContainer('7', Icons.settings),
+                  const SizedBox(width: 12),
+                  BasicContainer('8', Icons.camera),
+                  const SizedBox(width: 12),
+                  BasicContainer('9', Icons.wifi),
+                  const SizedBox(width: 12),
+                  BasicContainer('10', Icons.bluetooth),
                 ],
               ),
             ),
