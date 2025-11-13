@@ -10,7 +10,7 @@ class BasicContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('$label: $icon');  // Solo imprime en consola (opcional)
+        print('$label: $icon');  
       },
       child: Container(
         width: 100,

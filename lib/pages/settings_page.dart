@@ -11,55 +11,79 @@ class SettingsPage extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         child: Column(
           children: [
-            // Row con scroll horizontal - REQUISITO: separación 12px
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  BasicContainer('1', Icons.abc_outlined),
+                  _buildImageBox('assets/testImage1.jpg'),
                   const SizedBox(width: 12),
-                  BasicContainer('2', Icons.ac_unit_rounded),
+                  _buildImageBox('assets/zorro.jpg'),
                   const SizedBox(width: 12),
-                  BasicContainer('3', Icons.access_alarms_outlined),
+                  _buildImageBox('assets/testImage1.jpg'),
                   const SizedBox(width: 12),
-                  BasicContainer('4', Icons.access_time),
-                  const SizedBox(width: 12),
-                  BasicContainer('5', Icons.icecream_outlined),
-                  const SizedBox(width: 12),
-                  BasicContainer('6', Icons.phone),
-                  const SizedBox(width: 12),
-                  BasicContainer('7', Icons.settings),
-                  const SizedBox(width: 12),
-                  BasicContainer('8', Icons.camera),
-                  const SizedBox(width: 12),
-                  BasicContainer('9', Icons.wifi),
-                  const SizedBox(width: 12),
-                  BasicContainer('10', Icons.bluetooth),
+                  _buildImageBox('assets/zorro.jpg'),
                 ],
               ),
             ),
             const SizedBox(height: 20),
-            
-            // Stack (lo que hiciste en clase)
             Stack(
               children: [
                 Container(
                   height: 360,
                   width: double.infinity,
-                  color: Colors.blue,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/testImage1.jpg'),
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
                 ),
-                Container(height: 100, width: 100, color: Colors.green),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.black,
-                  margin: const EdgeInsets.all(50),
+                Positioned(
+                  top: 20,
+                  left: 20,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      image: const DecorationImage(
+                        image: AssetImage('assets/zorro.jpg'),
+                        fit: BoxFit.fitHeight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 8,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 20,
+                  right: 20,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      image: const DecorationImage(
+                        image: AssetImage('assets/testImage1.jpg'),
+                        fit: BoxFit.fitHeight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 8,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
             const SizedBox(height: 20),
-            
-            // Wrap
             Wrap(
               children: [
                 BasicContainer('1', Icons.ac_unit),
@@ -71,6 +95,23 @@ class SettingsPage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildImageBox(String imagePath) {
+    return Container(
+      width: 100,
+      height: 100,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.fitHeight,
+        ),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 8),
+        ],
       ),
     );
   }

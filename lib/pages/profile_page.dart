@@ -5,7 +5,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(  // ← Esto permite el scroll
+    return SingleChildScrollView(  // el scroll
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
